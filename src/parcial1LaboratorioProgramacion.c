@@ -15,6 +15,7 @@
 #include "cliente.h"
 #include "pedido.h"
 #include "tipoDesecho.h"
+#include "localidad.h"
 
 #define SALIR 0
 #define VACIO 0
@@ -52,7 +53,10 @@ int main(void) {
 		printf("7. IMPRIMIR PEDIDOS PENDIENTES \n");
 		printf("8. IMPRIMIR PEDIDOS PROCESADOS \n");
 		printf("9. PEDIDO PENDIENTE POR LOCALIDAD \n");
-		printf("8. CANTIDAD KG DE POLIPROPILENO (PP) POR LOCALIDAD \n");
+		printf("10. CANTIDAD KG DE POLIPROPILENO (PP) POR LOCALIDAD \n");
+		printf("11.IMPRIMIR CLIENTES CON MAS PEDIDOS PENDIENTES \n");
+		printf("12.IMPRIMIR CLIENTES CON MAS PEDIDOS COMPLETADOS \n");
+		printf("13.IMPRIMIR CLIENTES CON MAS PEDIDOS \n");
 		printf("0. SALIR DEL MENU \n");
 
 		opcion = IngresarEntero("Ingrese una opción \n");
@@ -124,6 +128,14 @@ int main(void) {
 			break;
 
 		case 10:
+			break;
+
+		case 11:
+			break;
+
+		case 12:
+			break;
+		case 13:
 			break;
 		}
 
