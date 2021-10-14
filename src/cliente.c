@@ -12,11 +12,12 @@ int generarId(){
 
 cliente IngresarCliente(){
 	cliente clienteNuevo;
+	localidad localidadNueva;
 	getString(clienteNuevo.nombreCliente, "Ingrese el nombre del cliente \n",50);
 	clienteNuevo.cuit = IngresarEnteroGrande("Ingrese el cuit del cliente \n");
 	clienteNuevo.idCliente = generarId();
 	getString(clienteNuevo.direccion, "Ingrese la dirección del cliente: \n", 50);
-	getString(clienteNuevo.localidad, "Ingrese la localidad del cliente: \n", 50);
+	strcpy(clienteNuevo.localidad, localidadNueva.nombreLocalidad);
 	clienteNuevo.isEmpty = LLENO;
 
 	return clienteNuevo;

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+#include "localidad.h"
 
 typedef struct{
 	char nombreCliente[50];

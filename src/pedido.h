@@ -4,9 +4,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
+#include "input.h"
 #include "tipoDesecho.h"
-#include "informe.h"
-#include "cliente.h"
+
+
 
 
 
@@ -26,7 +28,8 @@ int cargarPedido(pedido arrayPedido[], int tamanio,tipoDesecho arrayDesecho[], i
 int ProcesarResiduos(pedido arrayPedido[], int tamanio, tipoDesecho arrayDesecho[], int tamanioDesecho);
 void InicializarArrayPedidos (pedido arrayPedido[], int tamanio);
 void MostrarPedido (pedido unPedido);
-int BuscarPrimerEspacioLibre (pedido arrayPedido[], int tamanio);
+int BuscarPrimerEspacioLibrePedido (pedido arrayPedido[], int tamanio);
+
 
 
 #endif

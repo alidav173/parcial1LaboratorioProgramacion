@@ -7,17 +7,20 @@
 #define PENDIENTE 2
 #define COMPLETADO 3
 
-int generarId(){
+
+//autogenera el ID del pedido. Inicia en 1001
+int generarIdPedido(){
 	static int id = ID_INICIAL;
 	return ++id;
 
 }
 
+//se crea el pedido con los valores pasado por el usuario. El tipo residuo y isEpmty se hardcodean
 pedido CrearPedidoRecoleccion(tipoDesecho arrayDesecho[], int tamanio){
 	pedido pedidoNuevo;
 	pedidoNuevo.idcliente = IngresarEntero("Ingrese el id del cliente \n");
 	pedidoNuevo.cantKg = IngresarEntero("Ingrese la cantidad de kg totales de desechos: \n");
-	pedidoNuevo.idPedido = generarId();
+	pedidoNuevo.idPedido = generarIdPedido();
 	pedidoNuevo.estadoPedido = PENDIENTE;
 	pedidoNuevo.tipoResiduo = VACIO;
 	pedidoNuevo.isEmpty = LLENO;
@@ -25,6 +28,7 @@ pedido CrearPedidoRecoleccion(tipoDesecho arrayDesecho[], int tamanio){
 	return pedidoNuevo;
 }
 
+//carga el pedido en el array de pedidos
 int cargarPedido(pedido arrayPedido[], int tamanio,tipoDesecho arrayDesecho[], int tamanioDesecho){
 	  int index = BuscarPrimerEspacioLibre (arrayPedido, tamanio);
 	  if (index != -1)
@@ -33,7 +37,9 @@ int cargarPedido(pedido arrayPedido[], int tamanio,tipoDesecho arrayDesecho[], i
 	    }
 	  return index;
 }
-
+/*Con el array de pedidos se busca el id del pedido contra lo que coloco el usuario por teclado, segúun la lista de opciones
+ * como se pasa el arrya de desechos, se guardan la cantidad de kg correspondientes a cada uno.
+ */
 int ProcesarResiduos(pedido arrayPedido[], int tamanio, tipoDesecho arrayDesecho[], int tamanioDesecho){
 	int retorno = 0;
 	int i;
@@ -59,8 +65,8 @@ int ProcesarResiduos(pedido arrayPedido[], int tamanio, tipoDesecho arrayDesecho
 	return retorno;
 }
 
-
-int BuscarPrimerEspacioLibre (pedido arrayPedido[], int tamanio)
+//busca el primer espacio libre en el array de pedidos
+int BuscarPrimerEspacioLibrePedido (pedido arrayPedido[], int tamanio)
 {
   int i;
   int index;
@@ -77,7 +83,7 @@ int BuscarPrimerEspacioLibre (pedido arrayPedido[], int tamanio)
   return index;
 }
 
-
+//inicializamos el array de los pedidos
 void InicializarArrayPedidos (pedido arrayPedido[], int tamanio)
 {
   for (int i = 0; i < tamanio; i++)
@@ -86,7 +92,7 @@ void InicializarArrayPedidos (pedido arrayPedido[], int tamanio)
     }
 }
 
-
+//muestra los valores del pedido
 void MostrarPedido (pedido unPedido)
 {
 
